@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-const SearchBox = ({ searchField, searchChange }) => {
+const SearchBox = ({ searchChange }) => {
 
     return (
         <div className='tc'>
