@@ -25,7 +25,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 class App extends Component {
-
     componentDidMount() {
         this.props.onRequestRobots();
     }
@@ -56,14 +55,3 @@ class App extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-const heavyDuty = () => {
-    const heavyArray = new Array(7000).fill(':D');
-    console.log('Created!');
-    return function (index) {
-        return heavyArray[index];
-    }
-}
-
-heavyDuty()(3);
