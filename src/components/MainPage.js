@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
+import CardList from './CardList';
+import SearchBox from './SearchBox';
 import '../containers/App.css';
-import Scroll from '../components/Scroll';
-import ErrorBoundary from '../components/ErrorBoundary'
-import CounterButon from '../components/CounterButton'
+import Scroll from './Scroll';
+import ErrorBoundary from './ErrorBoundary'
+import CounterButon from './CounterButton'
+import { IRobot } from '../containers/App';
 
 
 class MainPage extends Component {

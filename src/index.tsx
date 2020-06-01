@@ -7,18 +7,18 @@ import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 import App from './containers/App';
 import { Provider } from 'react-redux';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 
-const logger = createLogger();
+// const logger = createLogger();
 const rootReducer = combineReducers({ searchRobots, requestRobots })
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 ReactDOM.render(
     <Provider store={store} >
         <App />
     </Provider>,
-    document.getElementById('root'));
+    document.getElementById('root') as HTMLElement);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

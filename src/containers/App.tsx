@@ -4,7 +4,7 @@ import MainPage from '../components/MainPage'
 import React, { Component } from 'react'
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: any) => {
     return {
         searchField: state.searchRobots.searchField,
         isPending: state.requestRobots.isPending,
@@ -13,14 +13,28 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+        onSearchChange: (event: any) => dispatch(setSearchField(event.target.value)),
         onRequestRobots: () => dispatch(requestRobots())
     }
 }
 
-class App extends Component {
+export interface IRobot {
+    name: string;
+    id: number;
+    email: string;
+}
+
+interface IAppProps {
+}
+
+interface IAppState {
+    robots: Array<IRobot>;
+    searchfield: string;
+}
+
+class App extends React.Component<IAppProps, IAppState> {
     render() {
         return <MainPage {...this.props} />
     }
